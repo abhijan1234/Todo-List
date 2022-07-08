@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Crud.AppResolver.RepositoryResolver;
+using Crud.AppResolver.ServiceResolver;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +30,11 @@ namespace Crud_Operation
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddScoped<ICrudServiceResolver, CrudServiceResolver>();
+            services.AddScoped<ICrudRepositoryResolver, CrudRepositoryResolver>();
+            services.AddSwaggerGen();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +72,13 @@ namespace Crud_Operation
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint(url :"/swagger/v1/swagger.json", "My Api v1");
+                c.RoutePrefix = string.Empty;
             });
         }
     }
