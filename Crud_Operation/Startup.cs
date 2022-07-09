@@ -55,6 +55,16 @@ namespace Crud_Operation
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
+            app.UseCors();
+
+            app.UseCors(builder =>
+            {
+                builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

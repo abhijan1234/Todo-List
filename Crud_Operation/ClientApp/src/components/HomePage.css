@@ -1,0 +1,60 @@
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MainContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.SubContainer{
+ height: fit-content;
+ width: 65%;
+ box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) ;
+ margin: 50px;
+}
+
+.box1{
+    width: 100%;
+    height: 250px;
+    border: 0.5px solid lightgray;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box2{
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    flex-direction: column;
+}
+
+.InputContainer{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.FlexContainer{
+    width: 80%;
+    margin: 5px;
+
+}
+
+.flex-button{
+    margin: 15px auto;
+    
+}
